@@ -23,9 +23,9 @@ export default function Hero() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       <Noise
-        patternSize={250}
-        patternScaleX={3}
-        patternScaleY={3}
+        patternSize={100}
+        patternScaleX={2}
+        patternScaleY={2}
         patternRefreshInterval={2}
         patternAlpha={20}
       />
