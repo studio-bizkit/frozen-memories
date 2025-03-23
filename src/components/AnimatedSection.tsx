@@ -3,9 +3,6 @@
 import BlurText from "./BlurText";
 
 export default function AnimatedSection() {
-  const handleAnimationComplete = () => {
-    console.log("Animation completed!");
-  };
 
   return (
     <>
@@ -14,7 +11,7 @@ export default function AnimatedSection() {
         delay={50}
         animateBy="words"
         direction="bottom"
-        onAnimationComplete={handleAnimationComplete}
+        onAnimationComplete={()=>{}}
         className="text-2xl font-bold mb-1 font-roboto"
       />
       <BlurText
@@ -22,7 +19,7 @@ export default function AnimatedSection() {
         delay={100}
         animateBy="words"
         direction="bottom"
-        onAnimationComplete={handleAnimationComplete}
+        onAnimationComplete={()=>{}}
         className="text-xl mb-2 font-roboto"
       />
     </>

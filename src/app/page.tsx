@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import NavigationBar from "../components/Navbar";
 import CircularGallery from "../components/CircluarGallery";
 import AnimatedSection from "../components/AnimatedSection";
+import ImpactTestimonials from "@/components/VideoTestimonial";
 
 export default function Home() {
   const items = [
@@ -28,7 +29,6 @@ export default function Home() {
             height: "600px",
             position: "relative",
             width: "100%",
-            marginBottom:"1000px"
           }}
         >
           <CircularGallery
@@ -38,9 +38,9 @@ export default function Home() {
             items={items}
           />
         </div>
+        <ImpactTestimonials />
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
@@ -49,21 +49,9 @@ export default function Home() {
 // Footer Component
 const Footer = () => (
   <footer className="flex flex-wrap items-center justify-center gap-6 py-6 border-t bg-gray-50">
-    <FooterLink
-      href=""
-      icon="/file.svg"
-      text="Learn"
-    />
-    <FooterLink
-      href=""
-      icon="/window.svg"
-      text="Examples"
-    />
-    <FooterLink
-      href=""
-      icon="/globe.svg"
-      text="Go to nextjs.org →"
-    />
+    <FooterLink href="" icon="/file.svg" text="Learn" />
+    <FooterLink href="" icon="/window.svg" text="Examples" />
+    <FooterLink href="" icon="/globe.svg" text="Go to nextjs.org →" />
   </footer>
 );
 

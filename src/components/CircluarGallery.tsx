@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useRef, useEffect } from "react";
 import {
@@ -13,7 +13,10 @@ import {
 
 type GL = Renderer["gl"];
 
-function debounce<T extends (...args: unknown[]) => void>(func: T, wait: number) {
+function debounce<T extends (...args: unknown[]) => void>(
+  func: T,
+  wait: number
+) {
   let timeout: ReturnType<typeof setTimeout>;
   return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
     clearTimeout(timeout);
@@ -27,11 +30,15 @@ function lerp(p1: number, p2: number, t: number): number {
 
 function autoBind<T extends object>(instance: T): void {
   const proto = Object.getPrototypeOf(instance) as Record<string, unknown>;
-  
-  Object.getOwnPropertyNames(proto).forEach((key) => {
+
+  Object.getOwnPropertyNames(proto).forEach(key => {
     const descriptor = Object.getOwnPropertyDescriptor(proto, key);
-    
-    if (descriptor && typeof descriptor.value === "function" && key !== "constructor") {
+
+    if (
+      descriptor &&
+      typeof descriptor.value === "function" &&
+      key !== "constructor"
+    ) {
       Object.defineProperty(instance, key, {
         value: descriptor.value.bind(instance),
         writable: true,
@@ -40,7 +47,6 @@ function autoBind<T extends object>(instance: T): void {
     }
   });
 }
-
 
 function getFontSize(font: string): number {
   const match = font.match(/(\d+)px/);
@@ -630,7 +636,7 @@ class App {
     const width = height * this.camera.aspect;
     this.viewport = { width, height };
     if (this.medias) {
-      this.medias.forEach((media) =>
+      this.medias.forEach(media =>
         media.onResize({ screen: this.screen, viewport: this.viewport })
       );
     }
@@ -644,7 +650,7 @@ class App {
     );
     const direction = this.scroll.current > this.scroll.last ? "right" : "left";
     if (this.medias) {
-      this.medias.forEach((media) => media.update(this.scroll, direction));
+      this.medias.forEach(media => media.update(this.scroll, direction));
     }
     this.renderer.render({ scene: this.scene, camera: this.camera });
     this.scroll.last = this.scroll.current;
@@ -720,11 +726,15 @@ export default function CircularGallery({
       app.destroy();
     };
   }, [items, bend, textColor, borderRadius, font]);
-  
+
   return (
-    <div
-      className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing"
-      ref={containerRef}
-    />
+    <>
+      {/* <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-r from-white/30 via-transparent to-white/30 w-full md:hidden"></div>
+      <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-r from-white/50 via-transparent to-white/50 w-full hidden md:flex"></div> */}
+      <div
+        className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing"
+        ref={containerRef}
+      />
+    </>
   );
 }

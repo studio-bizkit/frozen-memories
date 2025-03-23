@@ -20,7 +20,11 @@ export default function NavigationBar() {
   return (
     <header className="w-full fixed top-0 left-0 bg-transparent z-50">
       <nav
-        className={`w-full flex bg-gradient-to-b from-black/80 to-transparent backdrop ${
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)",
+        }}
+        className={`w-full flex bg-gradient-to-b  backdrop ${
           scrolled ? "items-start py-10" : "items-start py-10"
         } justify-between px-4 md:px-10`}
       >
