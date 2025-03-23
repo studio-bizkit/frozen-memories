@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto_Serif, Roboto } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const robotoSerif = Roboto_Serif({
   variable: "--font-roboto-serif",
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${robotoSerif.variable} ${roboto.variable} antialiased`}
       >
+        <Analytics/>
         {children}
       </body>
     </html>
