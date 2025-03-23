@@ -15,12 +15,12 @@ export default function AboutUs() {
         className="text-4xl font-medium mb-1"
       />
       <BlurText
-        text="Step into the enchanting world of Wedding Bells, where love stories are woven into timeless tapestries through the art of photography. Our journey began with an extraordinary moment at Thrissur Pooram, where destiny brought together two kindred spirits – Aswin and Sreenath N Unnikrishnan. In That magical encounter, a spark was ignited, and Wedding Bells was born.<br>At Wedding Bells, our belief in the essence of genuine connections and authentic emotions is at the very heart of our craft. Our mantra is elegantly simple, yet it carries profound significance:   Real ties, real feelings, andmagical pictures''. We take immense joy in forging personal bonds with our cherished clients, immersing ourselves in their unique love stories and dreams for their special day.<br>At Wedding Bells, our belief in the essence of genuine connections and authentic emotions is at the very heart of our craft. Our mantra is elegantly simple, yet it carries profound significance: Real ties, real feelings, andmagical pictures''. We take immense joy in forging personal bonds with our cherished clients, immersing ourselves in their unique love stories and dreams for their special day.<br>Within the realm of intimate weddings, we discover an intimate oasis that stirs our souls. These close-knit celebrations cradle the true essence of love, and we set out to unveil the precious gems of genuine connections tucked within. With an artist's touch and a playful spirit, we elevate the ordinary into extraordinary keepsakes, brimming with authenticity and joy that will be treasured and adored throughout a lifetime."
+        text="Step into the captivating world of Frozen Memories, where every love story is etched into eternity through the artistry of photography. Based in Coimbatore and led by Shumsudeen, our journey began with a serendipitous moment—one that sparked a passion for preserving raw emotions and genuine connections.<br>At Frozen Memories, we believe in more than just taking pictures; we believe in capturing real bonds, real emotions, and timeless moments. Every wedding holds a unique story, and we take immense joy in becoming a part of it—understanding your vision, embracing your emotions, and turning fleeting moments into treasured keepsakes.<br>AOur heart beats for intimate weddings, where love is at its purest. These close-knit celebrations allow us to uncover the hidden gems of connection and authenticity. With an artist’s eye and a storyteller’s soul, we transform ordinary moments into extraordinary memories—preserved in frames that radiate warmth, love, and joy for a lifetime."
         delay={1000}
         animateBy="sentences"
         direction="bottom"
         onAnimationComplete={() => {}}
-        className="text-md font-normal"
+        className="text-md font-normal max-w-2xl"
       />
     </div>
   );

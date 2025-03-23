@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Hero from "../components/Hero";
 import NavigationBar from "../components/Navbar";
 import CircularGallery from "../components/CircluarGallery";
 import AnimatedSection from "../components/AnimatedSection";
 import ImpactTestimonials from "@/components/VideoTestimonial";
 import AboutUs from "@/components/AboutUs";
+import FixedFooter from "../components/Footer";
 
 export default function Home() {
   const items = [
@@ -39,34 +39,7 @@ export default function Home() {
         <AboutUs />
       </main>
 
-      <Footer />
+      <FixedFooter />
     </div>
   );
 }
-
-// Footer Component
-const Footer = () => (
-  <footer className="flex flex-wrap items-center justify-center gap-6 py-6 border-t bg-gray-50">
-    <FooterLink href="" icon="/file.svg" text="Learn" />
-    <FooterLink href="" icon="/window.svg" text="Examples" />
-    <FooterLink href="" icon="/globe.svg" text="Go to nextjs.org →" />
-  </footer>
-);
-
-interface FooterLinkProps {
-  href: string;
-  icon: string;
-  text: string;
-}
-
-const FooterLink = ({ href, icon, text }: FooterLinkProps) => (
-  <a
-    className="flex items-center gap-2 text-gray-600 hover:text-black transition duration-200 hover:underline"
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Image src={icon} alt={text} width={16} height={16} aria-hidden />
-    {text}
-  </a>
-);
