@@ -16,12 +16,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen font-roboto-serif">
-      {/* Navbar */}
       <NavigationBar />
 
       <Hero />
 
-      {/* Main Content */}
       <main className="flex-1 flex flex-col items-center justify-center py-16 gap-0 text-center">
         <div className="px-8 sm:px-20 flex flex-col items-start justify-center w-full">
           <AnimatedSection />
