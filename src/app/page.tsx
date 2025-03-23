@@ -4,6 +4,7 @@ import NavigationBar from "../components/Navbar";
 import CircularGallery from "../components/CircluarGallery";
 import AnimatedSection from "../components/AnimatedSection";
 import ImpactTestimonials from "@/components/VideoTestimonial";
+import AboutUs from "@/components/AboutUs";
 
 export default function Home() {
   const items = [
@@ -32,7 +33,10 @@ export default function Home() {
             items={items}
           />
         </div>
-        <ImpactTestimonials />
+        <div className="relative w-full mb-20">
+          <ImpactTestimonials />
+        </div>
+        <AboutUs />
       </main>
 
       <Footer />

@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto_Serif, Roboto } from "next/font/google";
+import { Geist, Geist_Mono, Roboto_Serif, Roboto , Niconne, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import Lenis from "@/components/Lenis ";
+
+const niconne = Niconne({
+  variable: "--font-niconne",
+  subsets: ["latin"],
+  weight: "400"
+});
+
+const bodoniModa = Bodoni_Moda({
+  variable: "--font-bodoni-moda",
+  subsets: ["latin"],
+});
+
 
 const robotoSerif = Roboto_Serif({
   variable: "--font-roboto-serif",
@@ -36,10 +49,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${robotoSerif.variable} ${roboto.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${robotoSerif.variable} ${roboto.variable} ${niconne.variable} ${bodoniModa.variable} antialiased`}
       >
-        <Analytics/>
-        {children}
+        <Lenis>
+          <Analytics />
+          {children}
+        </Lenis>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import BlurText from "./BlurText";
+import { WordRotate } from "./magicui/word-rotate";
 import TestimonialCarousel from "./TestimonialCarousel";
 
 const ImpactTestimonials = () => {
@@ -21,24 +22,33 @@ const ImpactTestimonials = () => {
         <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Overlay Text */}
-        <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-32 text-white">
-          <div className="text-left space-y-4">
+        <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-32 text-white overflow-visible">
+          <div className="text-left space-y-4 flex flex-col overflow-visible">
             <BlurText
-              text="Every moment, Every story, timeless."
               delay={50}
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-3xl font-semibold text-white leading-tight"
-            />
+              className="text-4xl font-semibold text-white leading-8 tracking-normal inlin flex flex-row overflow-visible"
+            >
+              Every
+              <WordRotate
+                className="text-white text-6xl font-niconne font-normal -mt-3 overflow-visible"
+                words={["moment", "story", "emotion", "frame"]}
+              />{" "}
+              is timeless.
+            </BlurText>
+
             <BlurText
-              text="The laughter, the tears, the love—we don’t just take photos, we preserve emotions."
               delay={150}
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-lg text-white/80 max-w-xs"
-            />
+              className="text-lg text-white/80 max-w-xs font-roboto"
+            >
+              The laughter, the tears, the love—we don’t just take photos, we
+              preserve emotions.
+            </BlurText>
           </div>
         </div>
       </div>

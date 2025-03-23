@@ -732,7 +732,7 @@ export default function CircularGallery({
       {/* <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-r from-white/30 via-transparent to-white/30 w-full md:hidden"></div>
       <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-r from-white/50 via-transparent to-white/50 w-full hidden md:flex"></div> */}
       <div
-        className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing"
+        className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing   "
         ref={containerRef}
       />
     </>

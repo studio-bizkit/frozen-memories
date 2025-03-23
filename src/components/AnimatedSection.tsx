@@ -12,7 +12,7 @@ export default function AnimatedSection() {
         animateBy="words"
         direction="bottom"
         onAnimationComplete={()=>{}}
-        className="text-2xl font-bold mb-1 font-roboto"
+        className="text-2xl font-bold mb-1"
       />
       <BlurText
         text="We capture your most precious moments with creativity and passion."
@@ -20,7 +20,7 @@ export default function AnimatedSection() {
         animateBy="words"
         direction="bottom"
         onAnimationComplete={()=>{}}
-        className="text-xl mb-2 font-roboto"
+        className="text-xl mb-2"
       />
     </>
   );
