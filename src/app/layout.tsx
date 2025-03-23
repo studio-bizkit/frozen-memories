@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Roboto_Serif, Roboto , Niconne, Bodoni_Moda } from "
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Lenis from "@/components/Lenis";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const niconne = Niconne({
   variable: "--font-niconne",
@@ -53,6 +54,7 @@ export default function RootLayout({
       >
         <Lenis>
           <Analytics />
+          <SpeedInsights />
           {children}
         </Lenis>
       </body>
