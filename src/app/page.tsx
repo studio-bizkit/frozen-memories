@@ -3,8 +3,9 @@ import NavigationBar from "../components/Navbar";
 import CircularGallery from "../components/CircluarGallery";
 import AnimatedSection from "../components/AnimatedSection";
 import ImpactTestimonials from "@/components/VideoTestimonial";
-import AboutUs from "@/components/AboutUs";
+import { AboutUs } from "@/components/AboutUs";
 import FixedFooter from "../components/Footer";
+import ZoomParallax from "../components/ZoomParallax";
 
 export default function Home() {
   const items = [
@@ -37,6 +38,9 @@ export default function Home() {
           <ImpactTestimonials />
         </div>
         <AboutUs />
+        <div className="w-full">
+          <ZoomParallax />
+        </div>
       </main>
 
       <FixedFooter />

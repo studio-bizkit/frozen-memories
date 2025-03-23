@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto_Serif, Roboto , Niconne, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import Lenis from "@/components/Lenis ";
+import Lenis from "@/components/Lenis";
 
 const niconne = Niconne({
   variable: "--font-niconne",

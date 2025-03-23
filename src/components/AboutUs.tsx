@@ -1,9 +1,8 @@
 "use client";
 
 import BlurText from "./BlurText";
-// import { TypingAnimation } from "./magicui/typing-animation";
 
-export default function AboutUs() {
+export function AboutUs() {
   return (
     <div className="flex flex-col justify-center items-center gap-8 max-w-4xl">
       <BlurText
