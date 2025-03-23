@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Noise from "./Noise";
+import BlurText from "./BlurText";
 
 const images = [
   "/images/slide1.jpg",
@@ -44,9 +45,16 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/40">
+      <div className="absolute pb-20 inset-0 flex flex-col items-center justify-end text-white/90 bg-black/40">
         <h1 className="text-5xl font-bold"></h1>
-        <p className="text-lg mt-2"></p>
+        <BlurText
+          text='"You create the memories, we preserve them"'
+          delay={50}
+          animateBy="words"
+          direction="bottom"
+          onAnimationComplete={() => {}}
+          className="text-lg mt-2 italic text-white/90"
+        />
       </div>
 
       {/* Progress Bar */}
@@ -55,7 +63,7 @@ export default function Hero() {
         className="absolute bottom-0 left-0 w-full h-1 bg-white/30"
         initial={{ width: "0%" }}
         animate={{ width: "100%" }}
-        transition={{ duration: 4, ease: "circIn" }}
+        transition={{ duration: 4, ease: "easeInOut" }}
       />
     </div>
   );

@@ -1,32 +1,34 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    text: "First testimonial goes here. Praising your product or service and expressing satisfaction.",
-    author: "Ansub",
-    image:
-      "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/t2awrrfzdvmg1chnzyfr.svg",
+    text: "Frozen Memories beautifully captured the essence of our wedding day. Every picture tells a story—we couldn’t have asked for more!",
+    author: "Arjun & Meera",
+    manImg: "/testimonials/text/man1.jpg",
+    womanImg: "/testimonials/text/woman1.jpg",
   },
   {
-    text: "Another testimonial goes here. Praising your product or service and expressing satisfaction.",
-    author: "Lex Collins",
-    image:
-      "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/pmblusboe7vkw8vxdknx.svg",
+    text: "From pre-wedding shoots to the big day, the team was incredible! Their creativity and eye for detail made every photo breathtaking.",
+    author: "Ravi & Ananya",
+    manImg: "/testimonials/text/man1.jpg",
+    womanImg: "/testimonials/text/woman1.jpg",
   },
   {
-    text: "Third testimonial goes here. Praising your product or service and expressing satisfaction.",
-    author: "Alex Jones",
-    image:
-      "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tyos2ayezryjskox3wzs.svg",
+    text: "Their portrait session was amazing. The lighting, the angles, everything was just perfect. Highly recommended!",
+    author: "Karthik & Priya",
+    manImg: "/testimonials/text/man1.jpg",
+    womanImg: "/testimonials/text/woman1.jpg",
   },
   {
-    text: "Fourth testimonial goes here. Praising your product or service and expressing satisfaction.",
-    author: "John Doe",
-    image:
-      "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/nymiivu48d5lywhf9rpf.svg",
+    text: "Frozen Memories didn’t just take photos—they preserved emotions. Every candid moment was captured so beautifully!",
+    author: "Vikram & Sneha",
+    manImg: "/testimonials/text/man1.jpg",
+    womanImg: "/testimonials/text/woman1.jpg",
   },
 ];
 
@@ -45,7 +47,7 @@ const TestimonialCarousel = () => {
     };
   }, []);
 
-  const { text, author, image } = testimonials[currentTestimonial];
+  const { text, author, manImg, womanImg } = testimonials[currentTestimonial];
 
   const variants = {
     initial: { opacity: 0, x: "100%" },
@@ -54,8 +56,8 @@ const TestimonialCarousel = () => {
   };
 
   const dotVariants = {
-    active: { scale: 1.2, backgroundColor: "#3f3f46" },
-    inactive: { scale: 1, backgroundColor: "#D1D5DB" },
+    active: { scale: 1.2, backgroundColor: "#D1D5DB" },
+    inactive: { scale: 1, backgroundColor: "#3f3f46" },
   };
 
   return (
@@ -78,8 +80,21 @@ const TestimonialCarousel = () => {
               duration: 0.6,
             }}
           >
-            <img src={image} alt={author} className="m-0 h-24 w-24" />
-            <p className="m-0 text-left text-2xl font-medium tracking-tight text-white">
+            <Image
+              width={10}
+              height={10}
+              src={manImg}
+              alt={author}
+              className="relative left-0 top-0 h-10 w-10 z-5 rounded-full border-2 bg-white border-white object-cover"
+            />
+            <Image
+              width={10}
+              height={10}
+              src={womanImg}
+              alt={author}
+              className="absolute left-5 top-0 h-10 w-10 z-4 rounded-full border-2 bg-white border-white object-cover"
+            />{" "}
+            <p className="m-0 text-left pt-4 text-2xl font-medium tracking-tight text-white">
               &quot;{text}&quot;
             </p>
             <div className="mx-auto mt-5 flex items-start w-full">

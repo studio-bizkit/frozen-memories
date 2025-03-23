@@ -20,17 +20,11 @@ export default function Home() {
       <Hero />
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col items-center justify-center py-16 gap-1 text-center">
+      <main className="flex-1 flex flex-col items-center justify-center py-16 gap-0 text-center">
         <div className="px-8 sm:px-20 flex flex-col items-start justify-center w-full">
           <AnimatedSection />
         </div>
-        <div
-          style={{
-            height: "600px",
-            position: "relative",
-            width: "100%",
-          }}
-        >
+        <div className="h-[600px] relative w-full mb-12">
           <CircularGallery
             bend={0}
             textColor="black"

@@ -14,32 +14,31 @@ const ImpactTestimonials = () => {
           muted
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/video.mp4" type="video/mp4"/>
+          <source src="/video.mp4" type="video/mp4" />
         </video>
         {/* Gradient Overlay (Left to Black) */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black"></div>
         <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Overlay Text */}
-        <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-20 text-white">
+        <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-32 text-white">
           <div className="text-left space-y-4">
             <BlurText
-              text="Real stories. Genuine impact."
+              text="Every moment, Every story, timeless."
               delay={50}
               animateBy="words"
               direction="bottom"
-              onAnimationComplete={()=>{}}
+              onAnimationComplete={() => {}}
               className="text-3xl font-semibold text-white leading-tight"
             />
             <BlurText
-              text="The words that follow aren’t scripted. They’re experiences."
-              delay={100}
+              text="The laughter, the tears, the love—we don’t just take photos, we preserve emotions."
+              delay={150}
               animateBy="words"
               direction="bottom"
-              onAnimationComplete={()=>{}}
+              onAnimationComplete={() => {}}
               className="text-lg text-white/80 max-w-xs"
             />
-
           </div>
         </div>
       </div>
