@@ -16,7 +16,6 @@ export default function Home() {
       {/* Navbar */}
       <NavigationBar />
 
-      {/* Hero Section */}
       <Hero />
 
       {/* Main Content */}
