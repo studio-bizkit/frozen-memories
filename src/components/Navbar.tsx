@@ -20,14 +20,13 @@ export default function NavigationBar() {
   return (
     <header className="w-full fixed top-0 left-0 bg-transparent z-50">
       <nav
-        className={`w-full flex bg-gradient-to-b from-black/80 to-transparent backdrop ${
-          scrolled ? "items-start py-10" : "items-start py-10"
-        } justify-between px-4 md:px-10`}
+        className={`w-full flex bg-gradient-to-b from-black/80 to-transparent backdrop ${scrolled ? "items-start py-10" : "items-start py-10"
+          } justify-between px-4 md:px-10`}
       >
         {/* Left Links */}
         <div className="hidden md:flex space-x-6">
-          <NavItem href="/photography" text="Photography" />
-          <NavItem href="/films" text="Films" />
+          <NavItem href="/photography" text="Photography" mobile={false} />
+          <NavItem href="/films" text="Films" mobile={false} />
         </div>
 
         {/* Logo in Center (Animated Size) */}
@@ -44,8 +43,8 @@ export default function NavigationBar() {
 
         {/* Right Links */}
         <div className="hidden md:flex space-x-6">
-          <NavItem href="/about-us" text="About Us" />
-          <NavItem href="/contact-us" text="Contact Us" />
+          <NavItem href="/about-us" text="About Us" mobile={false} />
+          <NavItem href="/contact-us" text="Contact Us" mobile={false} />
         </div>
 
         {/* Mobile Menu Button */}
@@ -85,8 +84,14 @@ export default function NavigationBar() {
   );
 }
 
-// Nav Item Component
-const NavItem = ({ href, text, mobile }) => (
+
+interface NavItemProps {
+  href: string;
+  text: string;
+  mobile: boolean;
+}
+
+const NavItem = ({ href, text, mobile }: NavItemProps) => (
   <motion.div
     initial={{ opacity: 0, x: 20 }}
     animate={{ opacity: 1, x: 0 }}
@@ -95,9 +100,8 @@ const NavItem = ({ href, text, mobile }) => (
   >
     <Link
       href={href}
-      className={`text-white hover:text-white/60 transition duration-200 font-young-serif uppercase font-weight-100 ${
-        mobile ? "block text-md py-2 " : "text-base text-white"
-      }`}
+      className={`text-white hover:text-white/60 transition duration-200 font-young-serif uppercase font-weight-100 ${mobile ? "block text-md py-2 " : "text-base text-white"
+        }`}
     >
       {text}
     </Link>

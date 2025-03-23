@@ -13,11 +13,11 @@ import {
 
 type GL = Renderer["gl"];
 
-function debounce<T extends (...args: any[]) => void>(func: T, wait: number) {
-  let timeout: number;
-  return function (this: any, ...args: Parameters<T>) {
-    window.clearTimeout(timeout);
-    timeout = window.setTimeout(() => func.apply(this, args), wait);
+function debounce<T extends (...args: unknown[]) => void>(func: T, wait: number) {
+  let timeout: ReturnType<typeof setTimeout>;
+  return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
   };
 }
 
@@ -25,14 +25,22 @@ function lerp(p1: number, p2: number, t: number): number {
   return p1 + (p2 - p1) * t;
 }
 
-function autoBind(instance: any): void {
-  const proto = Object.getPrototypeOf(instance);
+function autoBind<T extends object>(instance: T): void {
+  const proto = Object.getPrototypeOf(instance) as Record<string, unknown>;
+  
   Object.getOwnPropertyNames(proto).forEach((key) => {
-    if (key !== "constructor" && typeof instance[key] === "function") {
-      instance[key] = instance[key].bind(instance);
+    const descriptor = Object.getOwnPropertyDescriptor(proto, key);
+    
+    if (descriptor && typeof descriptor.value === "function" && key !== "constructor") {
+      Object.defineProperty(instance, key, {
+        value: descriptor.value.bind(instance),
+        writable: true,
+        configurable: true,
+      });
     }
   });
 }
+
 
 function getFontSize(font: string): number {
   const match = font.match(/(\d+)px/);
@@ -429,7 +437,7 @@ class App {
     last: number;
     position?: number;
   };
-  onCheckDebounce: (...args: any[]) => void;
+  onCheckDebounce: (...args: unknown[]) => void;
   renderer!: Renderer;
   gl!: GL;
   camera!: Camera;

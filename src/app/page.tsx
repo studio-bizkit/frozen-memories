@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Hero from "./components/Hero";
-import NavigationBar from "./components/Navbar";
-import CircularGallery from "./components/CircluarGallery";
-import AnimatedSection from "./components/AnimatedSection";
+import Hero from "../components/Hero";
+import NavigationBar from "../components/Navbar";
+import CircularGallery from "../components/CircluarGallery";
+import AnimatedSection from "../components/AnimatedSection";
 
 export default function Home() {
   const items = [
@@ -51,25 +51,30 @@ export default function Home() {
 const Footer = () => (
   <footer className="flex flex-wrap items-center justify-center gap-6 py-6 border-t bg-gray-50">
     <FooterLink
-      // href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+      href=""
       icon="/file.svg"
       text="Learn"
     />
     <FooterLink
-      // href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+      href=""
       icon="/window.svg"
       text="Examples"
     />
     <FooterLink
-      // href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+      href=""
       icon="/globe.svg"
       text="Go to nextjs.org →"
     />
   </footer>
 );
 
-// Footer Link Component
-const FooterLink = ({ href, icon, text }) => (
+interface FooterLinkProps {
+  href: string;
+  icon: string;
+  text: string;
+}
+
+const FooterLink = ({ href, icon, text }: FooterLinkProps) => (
   <a
     className="flex items-center gap-2 text-gray-600 hover:text-black transition duration-200 hover:underline"
     href={href}
