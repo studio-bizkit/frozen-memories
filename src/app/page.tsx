@@ -33,7 +33,7 @@ export default function Home() {
           }}
         >
           <CircularGallery
-            bend={1}
+            bend={0}
             textColor="black"
             borderRadius={0.05}
             items={items}

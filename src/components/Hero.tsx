@@ -19,8 +19,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      <AnimatePresence>
+    <div className="relative w-full h-screen overflow-hidden bg-black">
+      <AnimatePresence mode="wait">
         <motion.img
           key={index}
           src={images[index]}
@@ -37,6 +37,15 @@ export default function Hero() {
         <h1 className="text-5xl font-bold"></h1>
         <p className="text-lg mt-2"></p>
       </div>
+
+      {/* Progress Bar */}
+      <motion.div
+        key={index} // Restarts animation on new image
+        className="absolute bottom-0 left-0 w-full h-1 bg-white/30"
+        initial={{ width: "0%" }}
+        animate={{ width: "100%" }}
+        transition={{ duration: 4, ease:"circIn" }}
+      />
     </div>
   );
 }

@@ -20,8 +20,9 @@ export default function NavigationBar() {
   return (
     <header className="w-full fixed top-0 left-0 bg-transparent z-50">
       <nav
-        className={`w-full flex bg-gradient-to-b from-black/80 to-transparent backdrop ${scrolled ? "items-start py-10" : "items-start py-10"
-          } justify-between px-4 md:px-10`}
+        className={`w-full flex bg-gradient-to-b from-black/80 to-transparent backdrop ${
+          scrolled ? "items-start py-10" : "items-start py-10"
+        } justify-between px-4 md:px-10`}
       >
         {/* Left Links */}
         <div className="hidden md:flex space-x-6">
@@ -29,14 +30,20 @@ export default function NavigationBar() {
           <NavItem href="/films" text="Films" mobile={false} />
         </div>
 
-        {/* Logo in Center (Animated Size) */}
+        {/* Logo in Center (Animated Size & Entrance) */}
         <div className="md:flex-grow md:flex justify-center">
           <Link href="/" className="block">
             <motion.div
-              animate={{ width: scrolled ? 60 : 150 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              initial={{ opacity: 0, y: -20 }} // Start faded and above
+              animate={{ opacity: 1, y: 0 }} // Fade in and slide down
+              transition={{ duration: 0.8, ease: "easeOut", delay: 1 }} // Smooth effect
             >
-              <Image src="/logo.png" alt="Logo" width={150} height={40} />
+              <motion.div
+                animate={{ width: scrolled ? 60 : 150 }} // Keeps resizing behavior
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+              >
+                <Image src="/logo.png" alt="Logo" width={150} height={40} />
+              </motion.div>
             </motion.div>
           </Link>
         </div>
@@ -63,14 +70,14 @@ export default function NavigationBar() {
         </motion.button>
       </nav>
 
-      {/* Mobile Menu with Animation */}
+      {/* Mobile Menu with Slide & Fade Animation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 0 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 0 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="md:hidden absolute top-full left-0 w-full bg-transparent bg-opacity-80 py-4 flex flex-col items-end px-6 gap-0"
           >
             <NavItem href="/photography" text="Photography" mobile />
@@ -84,7 +91,6 @@ export default function NavigationBar() {
   );
 }
 
-
 interface NavItemProps {
   href: string;
   text: string;
@@ -93,15 +99,16 @@ interface NavItemProps {
 
 const NavItem = ({ href, text, mobile }: NavItemProps) => (
   <motion.div
-    initial={{ opacity: 0, x: 20 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: 20 }}
+    initial={{ opacity: 0, y: -10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -10 }}
     transition={{ duration: 0.3 }}
   >
     <Link
       href={href}
-      className={`text-white hover:text-white/60 transition duration-200 font-young-serif uppercase font-weight-100 ${mobile ? "block text-md py-2 " : "text-base text-white"
-        }`}
+      className={`text-white hover:text-white/60 transition duration-200 font-young-serif uppercase font-weight-100 ${
+        mobile ? "block text-md py-2 " : "text-base text-white"
+      }`}
     >
       {text}
     </Link>
