@@ -6,9 +6,9 @@ import TestimonialCarousel from "./TestimonialCarousel";
 
 const ImpactTestimonials = () => {
   return (
-    <div className="relative flex w-full h-[500px] items-center justify-between">
+    <div className="md:relative flex flex-col md:flex-row w-full md:h-[500px] h-[800px] items-center justify-between">
       {/* Left Side - Background Video with Gradient & Overlay Text */}
-      <div className="relative w-1/2 h-full">
+      <div className="relative w-full md:w-1/3 h-full">
         <video
           autoPlay
           loop
@@ -18,8 +18,8 @@ const ImpactTestimonials = () => {
           <source src="/video.mp4" type="video/mp4" />
         </video>
         {/* Gradient Overlay (Left to Black) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black"></div>
-        <div className="absolute inset-0 bg-black/60"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black"></div> */}
+        <div className="absolute inset-0 bg-black/70"></div>
 
         {/* Overlay Text */}
         <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-32 text-white overflow-visible">
@@ -29,32 +29,40 @@ const ImpactTestimonials = () => {
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-4xl font-semibold text-white leading-8 tracking-normal inlin flex flex-row overflow-visible"
+              className="text-6xl font-semibold text-white leading-12 tracking-normal inlin flex flex-row overflow-visible"
             >
               Every
               <WordRotate
-                className="text-white text-6xl font-niconne font-normal -mt-3 overflow-visible"
+                className="text-white text-7xl font-playfair-display italic font-normal -mt-1 overflow-visible"
                 words={["moment", "story", "emotion", "frame"]}
               />{" "}
               is timeless.
             </BlurText>
 
-            <BlurText
+            {/* <BlurText
               delay={150}
               animateBy="words"
               direction="bottom"
-              onAnimationComplete={() => {}}
+              onAnimationComplete={() => { }}
               className="text-lg text-white/80 max-w-xs font-roboto"
             >
-              The laughter, the tears, the love—we don’t just take photos, we
+              The laughter, the tears, the love—we don&apos;t just take photos, we
               preserve emotions.
-            </BlurText>
+            </BlurText> */}
           </div>
         </div>
       </div>
 
       {/* Right Side - Testimonials in a Black Background */}
-      <div className="w-1/2 h-full bg-black flex items-center justify-center p-10">
+      <div className="w-full md:w-2/3 h-full bg-black backdrop-blur-3xl flex items-center justify-center p-10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/90 backdrop-blur-lg"></div>
+        <video
+          autoPlay
+          loop
+          muted
+          className="md:block hidden absolute inset-0 h-full w-full object-cover opacity-10 blur-xl"
+        />
+
         <TestimonialCarousel />
       </div>
     </div>

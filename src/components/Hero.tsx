@@ -52,17 +52,53 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* Overlay Content */}
-      <div className="absolute pb-10 inset-0 flex flex-col items-center justify-end text-white/90 bg-black/40">
-        <h1 className="text-5xl font-bold "></h1>
-        <BlurText
-          text='"You create the memories, we preserve them"'
-          delay={50}
-          animateBy="words"
-          direction="bottom"
-          onAnimationComplete={() => {}}
-          className="text-lg mt-2 italic text-white/90"
-        />
-
+      <div className="absolute pb-20 pl-20 inset-0 flex flex-col items-start justify-end text-white/90 bg-black/70">
+        <div className="flex flex-col gap-2 justify-start items-start ">
+          <div className="flex flex-row gap-2 justify-end items-end p-0">
+            <BlurText
+              text="You create the"
+              delay={50}
+              animateBy="words"
+              direction="bottom"
+              onAnimationComplete={() => {}}
+              className="text-6xl font-normal font-satoshi -mb-1  space-x-0"
+            />
+            <BlurText
+              text="memories,"
+              delay={60}
+              animateBy="words"
+              direction="bottom"
+              onAnimationComplete={() => {}}
+              className="text-6xl font-playfair-display font-bold italic -mb-0.5 "
+            />
+          </div>
+        </div>
+        <div className="flex flex-row gap-2 justify-end items-end p-0 mb-5">
+          <BlurText
+            text="we"
+            delay={50}
+            animateBy="words"
+            direction="bottom"
+            onAnimationComplete={() => {}}
+            className="text-6xl font-normal font-satoshi -mb-1  space-x-0"
+          />
+          <BlurText
+            text="preserve "
+            delay={60}
+            animateBy="words"
+            direction="bottom"
+            onAnimationComplete={() => {}}
+            className="text-6xl font-playfair-display font-bold italic -mb-0.5 "
+          />
+          <BlurText
+            text="them."
+            delay={50}
+            animateBy="words"
+            direction="bottom"
+            onAnimationComplete={() => {}}
+            className="text-6xl font-normal font-satoshi -mb-1  space-x-0"
+          />
+        </div>
         {/* Scroll Down Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }} // Start faded and above

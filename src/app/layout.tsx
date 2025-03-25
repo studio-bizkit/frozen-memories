@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto_Serif, Roboto , Niconne, Bodoni_Moda } from "next/font/google";
+import { Geist, Geist_Mono, Roboto_Serif, Roboto, Niconne, Bodoni_Moda, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Lenis from "@/components/Lenis";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import localFont from 'next/font/local'
+
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  subsets: ["latin"],
+  weight: "400"
+});
 
 const niconne = Niconne({
   variable: "--font-niconne",
@@ -37,6 +45,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const satoshi = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Satoshi-Variable.ttf',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Satoshi-VariableItalic.ttf',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-satoshi',
+});
+
 export const metadata: Metadata = {
   title: "Frozen Memories",
   description: "Frozen Memories",
@@ -50,7 +72,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${robotoSerif.variable} ${roboto.variable} ${niconne.variable} ${bodoniModa.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${robotoSerif.variable} ${roboto.variable} ${niconne.variable} ${bodoniModa.variable} ${satoshi.variable} ${playfairDisplay.variable} antialiased`}
       >
         <Lenis>
           <Analytics />

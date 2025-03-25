@@ -6,6 +6,7 @@ import ImpactTestimonials from "@/components/VideoTestimonial";
 import { AboutUs } from "@/components/AboutUs";
 import FixedFooter from "../components/Footer";
 import ZoomParallax from "../components/ZoomParallax";
+import { FAQ } from "@/components/FAQ";
 
 export default function Home() {
   const items = [
@@ -20,7 +21,7 @@ export default function Home() {
 
       <Hero />
 
-      <main className="flex-1 flex flex-col items-center justify-center py-16 gap-0 text-center">
+      <main className="flex-1 flex flex-col items-center justify-center py-16 gap-0 text-center bg-second-background">
         <div className="px-8 sm:px-20 flex flex-col items-start justify-center w-full">
           <AnimatedSection />
         </div>
@@ -28,7 +29,7 @@ export default function Home() {
           <CircularGallery
             bend={0}
             textColor="black"
-            borderRadius={0.05}
+            borderRadius={0}
             items={items}
           />
         </div>
@@ -39,6 +40,7 @@ export default function Home() {
         <div className="w-full">
           <ZoomParallax />
         </div>
+        <FAQ />
       </main>
 
       <FixedFooter />

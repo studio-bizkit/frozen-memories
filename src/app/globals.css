@@ -6,8 +6,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-roboto-serif);
+  --font-sans: var(--font-satoshi);
   --font-roboto: var(--font-roboto-sans);
+  --font-satoshi: var(--font-satoshi);
+  --font-playfair-display: var(--font-playfair-display);
   --font-niconne: var(--font-niconne);
   --font-bodoni-moda: var(--font-bodoni-moda);
   --font-mono: var(--font-roboto-serif);
@@ -29,6 +31,7 @@
   --color-border: var(--border);
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
+  --color-second-background: var(--second-background);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
@@ -50,9 +53,12 @@
   --font-roboto-serif: 'Roboto Serif', serif;
   --font-roboto-sans: 'Roboto', sans;
   --font-niconne: 'Niconne', serif;
+  --font-playfair-display: 'Playfair Display', serif;
   --font-bodoni-moda: "Bodoni Moda", serif;
+  --font-satoshi: 'Satoshi', sans-serif;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
+  --second-background: rgb(255 255 239);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
@@ -64,7 +70,7 @@
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
+  --accent: rgb(91 91 59);
   --accent-foreground: oklch(0.21 0.006 285.885);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
@@ -123,6 +129,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
