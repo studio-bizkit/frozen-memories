@@ -6,7 +6,7 @@ import TestimonialCarousel from "./TestimonialCarousel";
 
 const ImpactTestimonials = () => {
   return (
-    <div className="md:relative flex flex-col md:flex-row w-full md:h-[500px] h-[800px] items-center justify-between">
+    <div className="md:relative flex flex-col md:flex-row w-full md:h-[500px] h-[900px] items-center justify-between">
       <div className="relative w-full md:w-1/3 h-full">
         <video
           autoPlay

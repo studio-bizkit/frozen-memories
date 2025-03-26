@@ -110,7 +110,7 @@ const NavItem = ({ href, text, mobile }: NavItemProps) => (
   >
     <Link
       href={href}
-      className={`text-white hover:text-white/60 transition duration-200 font-young-serif uppercase font-weight-100 ${
+      className={` text-accent-dark hover:text-white/60 transition duration-200 font-young-serif uppercase font-weight-100 ${
         mobile ? "block text-md py-2 " : "text-base text-white"
       }`}
     >

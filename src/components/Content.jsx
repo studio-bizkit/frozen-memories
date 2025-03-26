@@ -24,7 +24,7 @@ const Section2 = () => {
       <h1 className="text-[9vw] leading-[0.8] tracking-tighter mt-5 font-playfair-display">
         Frozen<br></br>Memories.
       </h1>
-      <p className="px-10 py-12 text-second-background">©copyright</p>
+      <p className="px-12 md:px-10 md:py-12 text-second-background">©copyright</p>
     </div>
   );
 };
@@ -32,7 +32,7 @@ const Section2 = () => {
 const Nav = () => {
   return (
     <div className="flex flex-col shrink-0 gap-6">
-      <div className="flex flex-col gap-2 text-[#ffffffef]">
+      <div className="flex flex-col gap-2 text-second-background">
         {/* <h3 className="mb-2 uppercase text-[#ffffff8a]">About</h3> */}
         <p>Home</p>
         <p>Photographs</p>
@@ -40,7 +40,7 @@ const Nav = () => {
         <p>About Us</p>
         <p>Contact Us</p>
       </div>
-      <div className="flex flex-row gap-2 text-[#ffffffef] font-roboto">
+      <div className="flex flex-row gap-2 text-second-background font-roboto">
         Made with <Heart strokeWidth={1} color="red" fill="red" size="18px" className="mt-0.5" /> by Studio Bizkit
       </div>
     </div>

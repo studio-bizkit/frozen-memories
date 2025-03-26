@@ -60,7 +60,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <section className="py-8 md:py-14 px-12 relative bg-black/50">
+    <section className="py-12 md:py-14 md:px-12 px-2 relative md:bg-black/50 bg-transparent">
       <div className="relative w-full max-w-xl overflow-hidden">
         {/* Gradient Overlay for Fading Effect */}
         {/* <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-r from-white/50 via-transparent to-white/50 w-2xl"></div> */}

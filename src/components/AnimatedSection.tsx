@@ -5,7 +5,7 @@ import BlurText from "./BlurText";
 export default function AnimatedSection() {
   return (
     <>
-      <div className="flex flex-row gap-2 justify-end items-end p-0 mb-3">
+      <div className="flex md:flex-row flex-col md:gap-2 justify-end md:items-end items-start p-0 mb-3">
         <BlurText
           text="Freeze the"
           delay={50}
