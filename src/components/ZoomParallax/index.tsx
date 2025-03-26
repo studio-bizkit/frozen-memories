@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
@@ -28,7 +28,15 @@ export default function Index() {
     useTransform(scrollYProgress, [0, 1], [1, 9]),
   ];
 
-  const pictures = [Picture1, Picture2, Picture3, Picture4, Picture5, Picture6, Picture7];
+  const pictures = [
+    Picture1,
+    Picture2,
+    Picture3,
+    Picture4,
+    Picture5,
+    Picture6,
+    Picture7,
+  ];
 
   const positions = [
     "top-0 left-0",
@@ -44,10 +52,32 @@ export default function Index() {
     <div ref={container} className="relative h-[300vh] text-black">
       <div className="sticky top-0 h-screen overflow-hidden">
         {pictures.map((src, index) => (
-          <motion.div key={index} style={{ scale: scales[index] }} className="absolute flex h-full w-full items-center justify-center">
-            {index === 0 ? "hello" : ""}
+          <motion.div
+            key={index}
+            style={{ scale: scales[index] }}
+            className="absolute flex h-full w-full items-center justify-center"
+          >
+            {index === 0 ? (
+              <div>
+                <Image
+                  src={"/images/slide1.jpg"}
+                  width={450}
+                  height={50}
+                  alt="image"
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              ""
+            )}
             <div className={`relative ${positions[index]}`}>
-              <Image src={src} fill alt="image" placeholder="blur" className="object-cover" />
+              <Image
+                src={src}
+                fill
+                alt="image"
+                placeholder="blur"
+                className="object-cover"
+              />
             </div>
           </motion.div>
         ))}

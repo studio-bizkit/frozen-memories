@@ -52,8 +52,8 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* Overlay Content */}
-      <div className="absolute pb-20 pl-20 inset-0 flex flex-col items-start justify-end text-white/90 bg-black/70">
-        <div className="flex flex-col gap-2 justify-start items-start ">
+      <div className="absolute pb-10 pl-10 md:pb-20 md:pl-20 inset-0 flex flex-col items-start justify-end text-white/90 bg-black/70 z-100">
+        <div className="flex flex-col gap-2 justify-start items-start">
           <div className="flex flex-row gap-2 justify-end items-end p-0">
             <BlurText
               text="You create the"
@@ -61,7 +61,7 @@ export default function Hero() {
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-6xl font-normal font-satoshi -mb-1  space-x-0"
+              className="text-xl md:text-6xl font-normal font-satoshi -mb-1 space-x-0"
             />
             <BlurText
               text="memories,"
@@ -69,7 +69,7 @@ export default function Hero() {
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-6xl font-playfair-display font-bold italic -mb-0.5 "
+              className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 "
             />
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Hero() {
             animateBy="words"
             direction="bottom"
             onAnimationComplete={() => {}}
-            className="text-6xl font-normal font-satoshi -mb-1  space-x-0"
+            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0"
           />
           <BlurText
             text="preserve "
@@ -88,7 +88,7 @@ export default function Hero() {
             animateBy="words"
             direction="bottom"
             onAnimationComplete={() => {}}
-            className="text-6xl font-playfair-display font-bold italic -mb-0.5 "
+            className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 "
           />
           <BlurText
             text="them."
@@ -96,7 +96,7 @@ export default function Hero() {
             animateBy="words"
             direction="bottom"
             onAnimationComplete={() => {}}
-            className="text-6xl font-normal font-satoshi -mb-1  space-x-0"
+            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0"
           />
         </div>
         {/* Scroll Down Button */}

@@ -6,7 +6,7 @@ import TestimonialCarousel from "./TestimonialCarousel";
 
 const ImpactTestimonials = () => {
   return (
-    <div className="md:relative flex flex-col md:flex-row w-full md:h-[500px] h-[900px] items-center justify-between">
+    <div className="md:relative flex flex-col md:flex-row w-full md:h-[500px] h-[600px] items-center justify-between">
       <div className="relative w-full md:w-1/3 h-full">
         <video
           autoPlay
@@ -28,11 +28,11 @@ const ImpactTestimonials = () => {
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-6xl font-semibold text-white leading-12 tracking-normal inlin flex flex-row overflow-visible"
+              className="text-4xl md:text-6xl font-semibold text-white md:leading-12 leading-8 tracking-normal inlin flex flex-row overflow-visible"
             >
               Every
               <WordRotate
-                className="text-white text-7xl font-playfair-display italic font-normal -mt-1 overflow-visible"
+                className="text-white text-5xl md:text-7xl font-playfair-display italic font-normal -mt-1 overflow-visible"
                 words={["moment", "story", "emotion", "frame"]}
               />{" "}
               is timeless.

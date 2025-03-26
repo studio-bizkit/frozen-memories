@@ -18,7 +18,7 @@ export default function NavigationBar() {
   }, []);
 
   return (
-    <header className="w-full fixed top-0 left-0 bg-transparent z-50">
+    <header className="w-full fixed top-0 left-0 bg-transparent z-91 ">
       <nav
         style={{
           background:
@@ -26,7 +26,7 @@ export default function NavigationBar() {
         }}
         className={`w-full flex bg-gradient-to-b  backdrop ${
           scrolled ? "items-start py-10" : "items-start py-10"
-        } justify-between px-4 md:px-10`}
+        } justify-between px-8 md:px-10`}
       >
         {/* Left Links */}
         <div className="hidden md:flex space-x-6">
@@ -110,7 +110,7 @@ const NavItem = ({ href, text, mobile }: NavItemProps) => (
   >
     <Link
       href={href}
-      className={` text-accent-dark hover:text-white/60 transition duration-200 font-young-serif uppercase font-weight-100 ${
+      className={`cursor-pointer text-accent-dark hover:text-white/60 transition duration-200 font-young-serif uppercase font-weight-100 ${
         mobile ? "block text-md py-2 " : "text-base text-white"
       }`}
     >

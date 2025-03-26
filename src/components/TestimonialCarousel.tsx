@@ -60,7 +60,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <section className="py-12 md:py-14 md:px-12 px-2 relative md:bg-black/50 bg-transparent">
+    <section className="py-12 md:py-14 md:px-12 px-2 relative bg-transparent">
       <div className="relative w-full max-w-xl overflow-hidden">
         {/* Gradient Overlay for Fading Effect */}
         {/* <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-r from-white/50 via-transparent to-white/50 w-2xl"></div> */}
@@ -93,7 +93,7 @@ const TestimonialCarousel = () => {
               alt={author}
               className="absolute left-5 top-0 h-10 w-10 z-4 rounded-full border-2 bg-white border-white object-cover"
             />{" "}
-            <p className="m-0 text-left pt-4 text-2xl font-medium tracking-tight text-white">
+            <p className="m-0 text-left pt-4 text-md md:text-2xl font-medium tracking-tight text-white">
               &quot;{text}&quot;
             </p>
             <div className="mx-auto mt-5 flex items-start w-full">

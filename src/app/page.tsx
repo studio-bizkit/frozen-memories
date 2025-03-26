@@ -40,7 +40,7 @@ export default function Home() {
         <div className="w-full">
           <ZoomParallax />
         </div>
-        <div className="w-full flex justify-center items-center">
+        <div className="w-full flex justify-center items-center mt-28 mb-0">
           <FAQ />
         </div>
       </main>
