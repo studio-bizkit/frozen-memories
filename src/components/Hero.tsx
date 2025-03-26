@@ -52,7 +52,7 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* Overlay Content */}
-      <div className="absolute pb-10 pl-10 md:pb-20 md:pl-20 inset-0 flex flex-col items-start justify-end text-white/90 bg-black/70 z-100">
+      <div className="absolute pb-10 pl-10 md:pb-20 md:pl-20 inset-0 flex flex-col items-start justify-end text-white/90 bg-black/70 z-90 ">
         <div className="flex flex-col gap-2 justify-start items-start">
           <div className="flex flex-row gap-2 justify-end items-end p-0">
             <BlurText
@@ -61,7 +61,7 @@ export default function Hero() {
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-xl md:text-6xl font-normal font-satoshi -mb-1 space-x-0"
+              className="text-xl md:text-6xl font-normal font-satoshi -mb-1 space-x-0 text-second-background"
             />
             <BlurText
               text="memories,"
@@ -69,7 +69,7 @@ export default function Hero() {
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 "
+              className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 text-second-background"
             />
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Hero() {
             animateBy="words"
             direction="bottom"
             onAnimationComplete={() => {}}
-            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0"
+            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0 text-second-background"
           />
           <BlurText
             text="preserve "
@@ -88,7 +88,7 @@ export default function Hero() {
             animateBy="words"
             direction="bottom"
             onAnimationComplete={() => {}}
-            className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 "
+            className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 text-second-background"
           />
           <BlurText
             text="them."
@@ -96,7 +96,7 @@ export default function Hero() {
             animateBy="words"
             direction="bottom"
             onAnimationComplete={() => {}}
-            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0"
+            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0 text-second-background"
           />
         </div>
         {/* Scroll Down Button */}
@@ -112,7 +112,7 @@ export default function Hero() {
           >
             <motion.div
               animate={{ y: [0, 5, 0] }}
-              className="flex flex-row items-center text-white/80 hover:text-white text-sm"
+              className="flex flex-row items-center text-second-background/80 hover:text-second-background text-sm"
               transition={{
                 duration: 1.2,
                 repeat: Infinity,

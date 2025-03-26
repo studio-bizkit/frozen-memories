@@ -36,9 +36,18 @@ export default function AnimatedSection() {
         />
       </div>
       <div className="flex w-full items-end justify-start md:justify-end">
-        <Button variant={"custom"}>
-          View more <ChevronsRight />
-        </Button>
+        <BlurText
+          // text="We capture your most precious moments with creativity and passion."
+          delay={500}
+          animateBy="words"
+          direction="bottom"
+          onAnimationComplete={() => {}}
+          className="text-2xl mb-2 text-accent-dark"
+        >
+          <Button variant={"custom"}>
+            View more <ChevronsRight />
+          </Button>
+        </BlurText>
       </div>
     </div>
   );

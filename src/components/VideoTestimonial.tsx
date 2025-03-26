@@ -18,7 +18,7 @@ const ImpactTestimonials = () => {
         </video>
         {/* Gradient Overlay (Left to Black) */}
         {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent to-accent-dark"></div> */}
-        <div className="absolute inset-0 bg-accent-dark/70"></div>
+        <div className="absolute inset-0 bg-accent-dark/75"></div>
 
         {/* Overlay Text */}
         <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-32 text-white overflow-visible">

@@ -98,7 +98,7 @@ const TestimonialCarousel = () => {
             </p>
             <div className="mx-auto mt-5 flex items-start w-full">
               <div className="flex flex-col items-start  w-full justify-center space-x-3">
-                <div className="font-regular text-sm  text-white/80">
+                <div className="font-regular text-sm  text-second-background/80">
                   {author}
                 </div>
               </div>
