@@ -112,14 +112,14 @@ export default function Hero() {
           >
             <motion.div
               animate={{ y: [0, 5, 0] }}
-              className="flex flex-row items-center text-second-background/80 hover:text-second-background text-sm"
+              className="flex flex-row items-center  text-sm"
               transition={{
                 duration: 1.2,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
             >
-              <span className="text-xs uppercase tracking-wide">
+              <span className="text-xs uppercase tracking-wide text-second-background/80 hover:text-second-background">
                 Scroll Down
               </span>
               <ChevronsDown size={12} className="mt-0" />
