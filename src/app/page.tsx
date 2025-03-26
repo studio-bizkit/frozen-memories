@@ -6,7 +6,7 @@ import ImpactTestimonials from "@/components/VideoTestimonial";
 import { AboutUs } from "@/components/AboutUs";
 import FixedFooter from "../components/Footer";
 import ZoomParallax from "../components/ZoomParallax";
-import { FAQ } from "@/components/FAQ";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   const items = [
@@ -25,7 +25,7 @@ export default function Home() {
         <div className="px-8 sm:px-20 flex flex-col items-start justify-center w-full">
           <AnimatedSection />
         </div>
-        <div className="h-[600px] relative w-full mb-12">
+        <div className="h-[600px] relative w-full mb-8 -mt-12">
           <CircularGallery
             bend={0}
             textColor="black"
@@ -40,7 +40,9 @@ export default function Home() {
         <div className="w-full">
           <ZoomParallax />
         </div>
-        <FAQ />
+        <div className="w-full flex justify-center items-center">
+          <FAQ />
+        </div>
       </main>
 
       <FixedFooter />
