@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Lenis from "@/components/Lenis";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import localFont from 'next/font/local'
+import NavigationBar from "@/components/Navbar";
 
 
 const playfairDisplay = Playfair_Display({
@@ -77,6 +78,7 @@ export default function RootLayout({
         <Lenis>
           <Analytics />
           <SpeedInsights />
+          <NavigationBar />
           {children}
         </Lenis>
       </body>

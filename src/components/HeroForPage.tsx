@@ -13,7 +13,11 @@ const images = [
   "/images/slide3.jpg",
 ];
 
-export default function Hero() {
+interface HeroProps {
+  title: string;
+}
+
+export default function HeroForPage({ title = "PAGE NAME" }: HeroProps) {
   const [index, setIndex] = useState(0);
   const lenis = useLenis();
 
@@ -52,53 +56,20 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* Overlay Content */}
-      <div className="absolute pb-10 pl-10 md:pb-20 md:pl-20 inset-0 flex flex-col items-start justify-end text-white/90 bg-black/70 z-90 ">
-        <div className="flex flex-col gap-2 justify-start items-start">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white/90 bg-black/70 z-90 p-10 md:p-20">
+        <div className="flex flex-col gap-2 justify-center items-center">
           <div className="flex flex-row gap-2 justify-end items-end p-0">
             <BlurText
-              text="You create the"
-              delay={50}
-              animateBy="words"
-              direction="bottom"
-              onAnimationComplete={() => {}}
-              className="text-xl md:text-6xl font-normal font-satoshi -mb-1 space-x-0 text-second-background"
-            />
-            <BlurText
-              text="memories,"
+              text={title.toString()}
               delay={60}
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 text-second-background"
+              className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 text-second-background uppercase"
             />
           </div>
         </div>
-        <div className="flex flex-row gap-2 justify-end items-end p-0 mb-5">
-          <BlurText
-            text="we"
-            delay={50}
-            animateBy="words"
-            direction="bottom"
-            onAnimationComplete={() => {}}
-            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0 text-second-background"
-          />
-          <BlurText
-            text="preserve "
-            delay={60}
-            animateBy="words"
-            direction="bottom"
-            onAnimationComplete={() => {}}
-            className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 text-second-background"
-          />
-          <BlurText
-            text="them."
-            delay={50}
-            animateBy="words"
-            direction="bottom"
-            onAnimationComplete={() => {}}
-            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0 text-second-background"
-          />
-        </div>
+
         {/* Scroll Down Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }} // Start faded and above

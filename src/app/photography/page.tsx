@@ -1,11 +1,11 @@
-import Hero from "../components/Hero";
-import CircularGallery from "../components/CircluarGallery";
-import AnimatedSection from "../components/AnimatedSection";
+import CircularGallery from "@/components/CircluarGallery";
+import AnimatedSection from "@/components/AnimatedSection";
 import ImpactTestimonials from "@/components/VideoTestimonial";
 import { AboutUs } from "@/components/AboutUs";
-import FixedFooter from "../components/Footer";
-import ZoomParallax from "../components/ZoomParallax";
+import FixedFooter from "@/components/Footer";
+import ZoomParallax from "@/components/ZoomParallax";
 import FAQ from "@/components/FAQ";
+import HeroForPage from "@/components/HeroForPage";
 
 export default function Home() {
   const items = [
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen font-roboto-serif">
 
-      <Hero />
+      <HeroForPage title="Photography" />
 
       <main className="flex-1 flex flex-col items-center justify-center py-16 gap-0 text-center bg-second-background">
         <div className="px-8 sm:px-20 flex flex-col items-start justify-center w-full">
