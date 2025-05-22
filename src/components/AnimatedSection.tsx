@@ -2,7 +2,7 @@
 
 import { ChevronsRight } from "lucide-react";
 import BlurText from "./BlurText";
-import { Button } from "./ui/button";
+import Button from "./StyledButton";
 
 export default function AnimatedSection() {
   return (
@@ -44,8 +44,8 @@ export default function AnimatedSection() {
           onAnimationComplete={() => {}}
           className="text-2xl mb-2 text-accent-dark"
         >
-          <Button variant={"custom"}>
-            View more <ChevronsRight />
+          <Button>
+            <span className="text-[18px]">View more</span> <ChevronsRight size={22}/>
           </Button>
         </BlurText>
       </div>

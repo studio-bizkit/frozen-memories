@@ -41,7 +41,7 @@ const Nav = () => {
         <p>Contact Us</p>
       </div>
       <div className="flex flex-row gap-2 text-second-background font-roboto">
-        Made with <Heart strokeWidth={1} color="red" fill="red" size="18px" className="mt-0.5" /> by Studio Bizkit
+        Baked with <Heart strokeWidth={1} color="red" fill="red" size="18px" className="mt-0.5" /> by Studio Bizkit
       </div>
     </div>
   );

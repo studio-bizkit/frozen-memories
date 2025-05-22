@@ -1,7 +1,7 @@
 "use client";
 
 import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import Button from "./StyledButton";
 import { Textarea } from "./ui/textarea";
 import {
   Accordion,
@@ -9,21 +9,32 @@ import {
   AccordionContent,
   AccordionTrigger,
 } from "./ui/accordion";
+import Card from "./StyledCard";
 
 export default function FAQ() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-6 px-6 md:p-6 w-full md:w-6xl">
-      <div className="row-span-2 flex flex-col gap-4 p-4 md:p-6 border border-accent-dark justify-between bg-accent-dark text-second-background">
-        <h2 className="text-xl md:text-2xl font-semibold font-playfair-display">
-          Get in Touch
-        </h2>
-        <Input type="text" placeholder="Your Name" />
-        <Input type="email" placeholder="Your Email" />
-        <Input type="tel" placeholder="WhatsApp Number" />
-        <Textarea placeholder="Your Message" className="h-20 md:h-24" />
-        <Button className="w-full">Send Message</Button>
+      <div className="row-span-2 flex flex-col gap-4 p-4 md:p-6 justify-between bg-transparent">
+        <Card>
+          <h2 className="text-xl md:text-2xl font-semibold font-playfair-display">
+            Get in Touch
+          </h2>
+          <Input type="text" placeholder="Your Name" className="rounded-lg" />
+          <Input type="email" placeholder="Your Email" className="rounded-lg" />
+          <Input
+            type="tel"
+            placeholder="WhatsApp Number"
+            className="rounded-lg"
+          />
+          <Textarea
+            placeholder="Your Message"
+            className="h-20 md:h-24 rounded-lg"
+          />
+          <Button className="my-4 mt-6">
+            <span className="text-[13px]">Send Message</span>
+          </Button>
+        </Card>
       </div>
-
       {/* Right Top - FAQ Section */}
       <div className="p-4 md:p-6 pb-1 border border-accent-dark">
         <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 font-playfair-display">
