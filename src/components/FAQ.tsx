@@ -14,7 +14,7 @@ import Card from "./StyledCard";
 export default function FAQ() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-6 px-6 md:p-6 w-full md:w-6xl">
-      <div className="row-span-2 flex flex-col gap-4 p-4 md:p-6 justify-between bg-transparent">
+      <div className="row-span-2 flex flex-col gap-4 justify-">
         <Card>
           <h2 className="text-xl md:text-2xl font-semibold font-playfair-display">
             Get in Touch
@@ -36,25 +36,26 @@ export default function FAQ() {
         </Card>
       </div>
       {/* Right Top - FAQ Section */}
-      <div className="p-4 md:p-6 pb-1 border border-accent-dark">
-        <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 font-playfair-display">
-          Frequently Asked Questions
-        </h2>
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Is your service reliable?</AccordionTrigger>
-            <AccordionContent>
-              Absolutely! We prioritize quality and customer satisfaction.
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger>How do I book a service?</AccordionTrigger>
-            <AccordionContent>
-              Simply fill out the form, and we’ll get in touch with you!
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div>
+      <Card>
+        <div className="p-4 md:p-6 pb-1">
+          <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 font-playfair-display">
+            Frequently Asked Questions
+          </h2>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Is your service reliable?</AccordionTrigger>
+              <AccordionContent>
+                Absolutely! We prioritize quality and customer satisfaction.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>How do I book a service?</AccordionTrigger>
+              <AccordionContent>
+                Simply fill out the form, and we’ll get in touch with you!
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div></Card>
 
       {/* Right Bottom - Company Contact Info */}
       <div className="flex flex-col justify-start items-start p-4 md:p-0">

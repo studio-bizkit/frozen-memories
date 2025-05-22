@@ -14,7 +14,7 @@ const Card = ({ children }: { children: React.ReactNode }) => {
 const StyledCardWrapper = styled.div`
   .card {
     position: relative;
-    background: linear-gradient(45deg, #2c2422, #695226, #f1ecd5);
+    background: linear-gradient(45deg, #2c2422, #2c2422, #f1ecd5);
     border-radius: 10px;
     padding: 24px;
     color: #fff;
@@ -40,7 +40,7 @@ const StyledCardWrapper = styled.div`
     content: "";
     position: absolute;
     inset: 0px;
-    background: linear-gradient(45deg, #59574f, #695226, #2c2422);
+    background: linear-gradient(45deg, #59574f, #5b4c30, #2c2422);
     border-radius: 5px;
     opacity: 0.6;
     filter: blur(30px);
