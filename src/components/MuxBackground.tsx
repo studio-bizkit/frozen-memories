@@ -71,6 +71,7 @@ export default function MuxBackground({ className }: MuxBackgroundProps) {
 				} else {
 					// No HLS support
 				}
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			} catch (_error) {
 				// swallow; background is non-blocking
 			}
