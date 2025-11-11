@@ -16,7 +16,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen font-roboto-serif">
-
       <Hero />
 
       <main className="flex-1 flex flex-col items-center justify-center py-16 gap-0 text-center bg-second-background">
