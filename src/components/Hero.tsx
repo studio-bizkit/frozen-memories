@@ -6,6 +6,7 @@ import Noise from "./Noise";
 import BlurText from "./BlurText";
 import { ChevronsDown } from "lucide-react"; // Import an arrow icon
 import { useLenis } from "lenis/react";
+import MuxBackground from "./MuxBackground";
 
 const images = [
   "/images/slide1.jpg",
@@ -17,12 +18,15 @@ export default function Hero() {
   const [index, setIndex] = useState(0);
   const lenis = useLenis();
 
+  const hasMux = Boolean(process.env.NEXT_PUBLIC_MUX_PLAYBACK_ID);
+
   useEffect(() => {
+    if (hasMux) return; // Disable slideshow timer if Mux is available
     const interval = setInterval(() => {
       setIndex(prevIndex => (prevIndex + 1) % images.length);
     }, 4000); // Change image every 4 seconds
     return () => clearInterval(interval);
-  }, []);
+  }, [hasMux]);
 
   const scrollToNextSection = () => {
     lenis?.scrollTo(window.innerHeight - 100);
@@ -30,6 +34,23 @@ export default function Hero() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
+      {/* Background Layer: Mux when configured, otherwise image slideshow */}
+      {hasMux ? (
+        <MuxBackground className="absolute inset-0 z-0" />
+      ) : (
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={index}
+            src={images[index]}
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          />
+        </AnimatePresence>
+      )}
+
       <Noise
         patternSize={100}
         patternScaleX={2}
@@ -39,20 +60,9 @@ export default function Hero() {
       />
       <div className="absolute inset-0 pointer-events-none z-1 bg-black/20 md:hidden"></div>
       <div className="absolute inset-0 pointer-events-none z-1 bg-black/10 0 w-full hidden md:flex"></div>
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={index}
-          src={images[index]}
-          className="absolute inset-0 w-full h-full object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-        />
-      </AnimatePresence>
 
       {/* Overlay Content */}
-      <div className="absolute pb-10 pl-10 md:pb-20 md:pl-20 inset-0 flex flex-col items-start justify-end text-white/90 bg-black/70 z-90 ">
+      <div className="absolute pb-10 pl-10 md:pb-20 md:pl-20 inset-0 flex flex-col items-start justify-end text-white/90 bg-black/50 z-90 ">
         <div className="flex flex-col gap-2 justify-start items-start">
           <div className="flex flex-row gap-2 justify-end items-end p-0">
             <BlurText
@@ -61,7 +71,7 @@ export default function Hero() {
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-xl md:text-6xl font-normal font-satoshi -mb-1 space-x-0 text-second-background"
+              className="text-xl md:text-4xl font-normal font-satoshi -mb-1 space-x-0 text-second-background"
             />
             <BlurText
               text="memories,"
@@ -69,7 +79,7 @@ export default function Hero() {
               animateBy="words"
               direction="bottom"
               onAnimationComplete={() => {}}
-              className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 text-second-background"
+              className="text-xl md:text-4xl font-playfair-display font-bold italic -mb-0.5 text-second-background"
             />
           </div>
         </div>
@@ -80,7 +90,7 @@ export default function Hero() {
             animateBy="words"
             direction="bottom"
             onAnimationComplete={() => {}}
-            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0 text-second-background"
+            className="text-xl md:text-4xl font-normal font-satoshi -mb-1  space-x-0 text-second-background"
           />
           <BlurText
             text="preserve "
@@ -88,7 +98,7 @@ export default function Hero() {
             animateBy="words"
             direction="bottom"
             onAnimationComplete={() => {}}
-            className="text-xl md:text-6xl font-playfair-display font-bold italic -mb-0.5 text-second-background"
+            className="text-xl md:text-4xl font-playfair-display font-bold italic -mb-0.5 text-second-background"
           />
           <BlurText
             text="them."
@@ -96,7 +106,7 @@ export default function Hero() {
             animateBy="words"
             direction="bottom"
             onAnimationComplete={() => {}}
-            className="text-xl md:text-6xl font-normal font-satoshi -mb-1  space-x-0 text-second-background"
+            className="text-xl md:text-4xl font-normal font-satoshi -mb-1  space-x-0 text-second-background"
           />
         </div>
         {/* Scroll Down Button */}
@@ -129,13 +139,15 @@ export default function Hero() {
       </div>
 
       {/* Progress Bar */}
-      <motion.div
-        key={index} // Restarts animation on new image
-        className="absolute bottom-0 left-0 w-full h-1 bg-white/30"
-        initial={{ width: "0%" }}
-        animate={{ width: "100%" }}
-        transition={{ duration: 4, ease: "easeInOut" }}
-      />
+      {!hasMux && (
+        <motion.div
+          key={index} // Restarts animation on new image
+          className="absolute bottom-0 left-0 w-full h-1 bg-white/30"
+          initial={{ width: "0%" }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 4, ease: "easeInOut" }}
+        />
+      )}
     </div>
   );
 }
